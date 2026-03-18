@@ -87,7 +87,7 @@ header .subtitle { font-size: 13px; opacity: 0.85; margin-top: 4px; }
 }
 
 .input-area button {
-  background: #1a3a6b;
+  background: #e84393;  /* 粉色按鈕 */
   color: white;
   border: none;
   padding: 10px 20px;
