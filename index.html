@@ -2,15 +2,21 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>W4 練習 Chatbot</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- 背景裝飾粒子 -->
+  <div class="particle" style="width:180px;height:180px;background:rgba(232,67,147,0.2);top:10%;left:5%;animation-delay:0s;animation-duration:10s;"></div>
+  <div class="particle" style="width:120px;height:120px;background:rgba(26,58,107,0.25);top:60%;right:8%;animation-delay:2s;animation-duration:8s;"></div>
+  <div class="particle" style="width:80px;height:80px;background:rgba(253,121,168,0.15);bottom:15%;left:20%;animation-delay:4s;animation-duration:12s;"></div>
+  <div class="particle" style="width:60px;height:60px;background:rgba(26,58,107,0.2);top:30%;right:25%;animation-delay:1s;animation-duration:9s;"></div>
+
   <div class="container">
     <header>
       <h1>🤖 練習用 Chatbot</h1>
-      <!-- 練習一：把標題改成你們組的名字 -->
       <p class="subtitle">W4 Git Branch 練習</p>
     </header>
 
@@ -21,9 +27,8 @@
     </div>
 
     <div class="input-area">
-      <input id="user-input" type="text" placeholder="輸入訊息...">
-      <!-- 練習二：把按鈕文字改成你喜歡的文字 -->
-      <button onclick="sendMessage()">送出</button>
+      <input id="user-input" type="text" placeholder="輸入訊息..." autocomplete="off">
+      <button onclick="sendMessage()">🚀 送出</button>
     </div>
   </div>
 
@@ -41,14 +46,20 @@
       userDiv.textContent = text;
       chatBox.appendChild(userDiv);
 
-      // 模擬 bot 回覆
-      const botDiv = document.createElement('div');
-      botDiv.className = 'message bot';
-      botDiv.textContent = `你說了「${text}」，我收到了！`;
-      chatBox.appendChild(botDiv);
+      // 模擬 bot 打字中效果
+      const typingDiv = document.createElement('div');
+      typingDiv.className = 'message bot';
+      typingDiv.innerHTML = '<span class="typing-dots">💭 思考中...</span>';
+      chatBox.appendChild(typingDiv);
 
       input.value = '';
       chatBox.scrollTop = chatBox.scrollHeight;
+
+      // 延遲顯示 bot 回覆
+      setTimeout(() => {
+        typingDiv.innerHTML = `你說了「${text}」，我收到了！✨`;
+        chatBox.scrollTop = chatBox.scrollHeight;
+      }, 800);
     }
 
     // 按 Enter 也能送出
