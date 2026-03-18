@@ -26,7 +26,7 @@ body {
 
 header {
   /* 練習：把標題列顏色從藍色改成其他顏色 */
-  background: #4f8ef7;
+  background: #1a3a6b;
   color: white;
   padding: 20px 24px;
 }
@@ -83,14 +83,14 @@ header .subtitle { font-size: 13px; opacity: 0.85; margin-top: 4px; }
 }
 
 .input-area input:focus {
-  border-color: #4f8ef7;
+  border-color: #1a3a6b;
 }
 
 .input-area button {
   /* 練習：把按鈕顏色改成你喜歡的顏色
-     conflict-a 分支：改成 #4f8ef7（藍色）
+     conflict-a 分支：改成 #1a3a6b（藍色）
      conflict-b 分支：改成 #e84393（粉色）  */
-  background: #4f8ef7;
+  background: #1a3a6b;
   color: white;
   border: none;
   padding: 10px 20px;
